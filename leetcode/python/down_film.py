@@ -34,7 +34,7 @@ for index in range(23):
 # 人纪-针灸   
 add_vec_5 = [] 
 str_base = 'https://www.bilibili.com/video/BV1Sb4y1B7zk/?p='
-for index in range(81):
+for index in range(34,81):
    add_vec_5.append(str_base + str(index+1))   
 
 
