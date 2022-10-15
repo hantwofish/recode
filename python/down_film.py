@@ -32,11 +32,18 @@ for index in range(23):
    add_vec_4.append(str_base + str(index+1))
 
 # 人纪-针灸   
-add_vec_5 = [] 
+add_vec_5 = []
+strend = '&vd_source=089c30965b1a20cea28e1699e381e5f6' 
 str_base = 'https://www.bilibili.com/video/BV1Sb4y1B7zk/?p='
-for index in range(81):
-   add_vec_5.append(str_base + str(index+1))   
+for index in range(1,80):
+   add_vec_5.append(str_base + str(index) + strend)   
 
+# 皇帝内经
+add_vec_6 = []
+strend = '&vd_source=089c30965b1a20cea28e1699e381e5f6'
+str_base = 'https://www.bilibili.com/video/BV1jr4y1y7k8/?p='
+for index in range(18,20):
+    add_vec_6.append(str_base + str(index)+ strend) 
 
 str_1_front = "C--设计模式"
 
@@ -78,7 +85,11 @@ if __name__ == '__main__':
     path = 'E:/films'
     for url in add_vec_5:
         print(url)
-        download(url, path)
+        #download(url, path)
         print("\n")
+    for url in add_vec_6:
+        print(url)
+        download(url, path)
+        print("\n")    
     # modify_file_name()
     print("Good Bye")
