@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt]{article}     %页面大小和字体大小
+\usepackage{CTEX}
+\usepackage{geometry}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\geometry{left=2.0cm, right=2.0cm, top=3.0cm, bottom=3.0cm}   %页边距
+\linespread{1.5}      %行距
+
+\begin{document}
+
+\begin{center}   %居中设置
+{\large \textbf{标题}}\\
+作者信息
+\end{center}
+
+\noindent %顶格（不缩进）
+\textbf{1.题目。}\\
+解：good\\
+$L=25m=25\times10^3mm$，$r=3mm/day=3.47\times10^{-5}mm/s$\\
+$k=0.01cm/s=0.1mm/s$，$S=0.02$
+\\
+代入$$y_{max}=L\sqrt{\frac{r}{k}}\left[\frac{kS^2}{r}+1-
+\frac{kS}{r}\sqrt{S^2+\frac{r}{k}}\right]$$
+得$$y_{max}=25\times10^3\times\sqrt{\frac{3.47\times10^{-5}}{0.1}}\times
+\left[\frac{0.1\times0.02^2}{3.47\times10^{-5}}+1-\frac{0.1\times0.02}
+{3.47\times10^{-5}}\times\sqrt{0.02^2+\frac{3.47\times10^{-5}}{0.1}}\right]=269mm$$
+
+代码与pdf双向搜索 \\
+代码 -> pdf \\
+正向搜索：先固定源码中的光标，然后Ctrl + Alt + J \\
+pdf -> 代码 \\
+反向搜索：Ctrl + 鼠标左键点击pdf中某个位置 \\
+
+\textbf{2.备注}\\
+
+
+
+\end{document}

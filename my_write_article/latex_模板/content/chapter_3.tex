@@ -1,0 +1,191 @@
+
+\chapter{数学}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Equations and math mode}
+
+虽然我会介绍数学公式的写法，但是现在网上已经有很多数学公式编辑器，
+你需要的是一款好的，牛逼的编辑器。这里给大家介绍一款\href{https://www.latexlive.com/}{\LaTeX 公式编辑器}
+
+创造一个自动编号的数学等式。
+\begin{equation}
+	f(x)
+	= A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \ .
+	\label{math_fe}
+\end{equation}
+
+这里是在同一行使用的数学模式，$x^2$
+$$
+	x^3
+$$
+
+\[ 
+	x*4
+\]
+首先我们需要\imp{amsmath}这个包，加载这个包以后，就可以使用equation来写公式。
+引用被标记过的使用\eqref{math_fe}。
+怎么听上去像飞雷神之术？方便记忆，amsmath的ams是American Mathematical Society的缩写，
+而eqref就是equation reference的缩写。一般{LaTeX}的这些写法都是英语或者英语的缩写。
+
+不需要编号的等式，可以使用\imp{equation*}来创建。
+
+\begin{equation*}
+	f(x)
+	= A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \ ,
+\end{equation*}
+or alternatively 
+\[
+	f(x)
+	= A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \ .
+\]
+
+你可以使用equation array(等式数组)，来写多个等式。等式数组就是几个等式
+的江湖黑话。
+\begin{eqnarray}
+	f(x)
+		&=& (x+a)^2 \label{eqna1} \\
+		&=& (x+a)(x+a) \label{eqna2}\\
+		&=& x^2 + 2 x a + a^2
+	\label{eqnaend}
+\end{eqnarray}
+
+分别使用 \eqref{eqna1} 和 \eqref{eqnaend} 来实现文中引用标签标记过的等式. 
+同样，不需要数字编号就在eqnarray后面加一个*.
+\begin{eqnarray*}
+	f(x)
+		&=& (x+a)^2 \\
+		&=& (x+a)(x+a) \\
+		&=& x^2 + 2 x a + a^2
+\end{eqnarray*}
+
+还可以用align的方式, align比较灵活，它可以完成上述所有的公式。
+
+\begin{align*}
+	f(x)
+		&= (x+a)^2 \\
+		&= (x+a)(x+a) \\
+		&= x^2 + 2 x a + a^2
+\end{align*}
+
+\begin{align}
+	f(x)
+	= A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \ ,
+\end{align}
+
+要想数学公式等式和文本显示在一起，而不是独自显示，就使用 \imp{\$\$} e.g., $f(x) = x^{234}_{ijkl}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{数组环境和矩阵}
+
+数组环境可以用来创建网格对齐的数学元素, array环境必须用在数学的环境里面。e.g.,
+\begin{equation}
+	\begin{array}{rcr}
+	x + y + z 
+		& m_{1234567} 
+		& 13425436543634 \\
+	A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y 
+		& n_{k} 
+		& 123
+	\end{array}
+\end{equation}
+
+几个等式也可以这样排列。
+\begin{equation}
+	\begin{array}{rcl}
+	f(x)
+	&=& A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \\
+	&=& 7 x \ .
+	\end{array}
+\end{equation}
+
+这个也可以用align环境来写，如下：
+\begin{align*}
+	f(x)
+	&= A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \\
+	&= 7 x \ .
+\end{align*}
+使用 \imp{eqnarray} 环境，有些时候显示的公式不太令人满意。
+为了充分显示公式可以用命令\imp{displaystyle}。 
+\begin{equation}
+	\begin{array}{rcl}
+	f(x)
+	&=& \displaystyle A^{23}_{ijkl}(x) \int_0^l\limits g(y,x) \frac{\partial h(y,x)}{\partial y} d y \\
+	&=& 7 x \ .
+	\end{array}
+\end{equation} 
+
+数组环境也可以用来显示矩阵, e.g., 
+\begin{equation}
+	\left(
+	\begin{array}{cccc}
+	123123 & 324 & 214 & 4 \\
+	43& 345345645 & 45353465 & 346
+	\end{array}
+	\right) \ .
+\end{equation}
+
+你也可以用如下的环境来创建矩阵，实际上，我推荐这个方式。
+
+\begin{equation}
+	\begin{pmatrix}
+	123123 & 324 & 214 & 4 \\
+	43& 345345645 & 45353465 & 346
+	\end{pmatrix} 
+	\quad
+	\begin{bmatrix}
+	123123 & 324 & 214 & 4 \\
+	43& 345345645 & 45353465 & 346
+	\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \begin{Bmatrix}
+        1 & 4 \\
+        2 & 5 \\
+        3 & 6
+    \end{Bmatrix}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{数学字体}
+
+数学字体需要导言区使用\imp{amssymb} 包. 下面是一些具体的字体。
+\[
+	\begin{array}{lccccc}
+	\text{default} & r & R & Sym^+ & \gamma & \Gamma \\
+	\text{bb} & \mathbb{r} & \mathbb{R} & \mathbb{Sym^+} & \mathbb{\gamma}& \mathbb{\Gamma} \\ 
+	\text{bf} & \mathbf{r} & \mathbf{R} & \mathbf{Sym^+} & \mathbf{\gamma}& \mathbf{\Gamma} \\
+	\text{cal} & \mathcal{r} & \mathcal{R} & \mathcal{Sym^+} & \mathcal{\gamma}& \mathcal{\Gamma} \\
+	\text{frak} & \mathfrak{r} & \mathfrak{R} & \mathfrak{Sym^+} & \mathfrak{\gamma}& \mathfrak{\Gamma} \\
+	\text{it} & \mathit{r} & \mathit{R} & \mathit{Sym^+} & \mathit{\gamma}& \mathit{\Gamma} \\
+	\text{rm} & \mathrm{r} & \mathrm{R} & \mathrm{Sym^+} & \mathrm{\gamma}& \mathrm{\Gamma} \\
+	\text{sf} & \mathsf{r} & \mathsf{R} & \mathsf{Sym^+} & \mathsf{\gamma}& \mathsf{\Gamma} \\
+	\text{tt} & \mathtt{r} & \mathtt{R} & \mathtt{Sym^+} & \mathtt{\gamma}& \mathtt{\Gamma} \\
+	\text{boldsymbol} & \boldsymbol{r} & \boldsymbol{R} & \boldsymbol{Sym^+} & \boldsymbol{\gamma}& \boldsymbol{\Gamma} \\
+	\end{array}
+\]
+\imp{mathbb}命令在不同的包下有不同的效果, e.g., \imp{euscript} and \imp{lucida} (look for latex math fonts in stackexchange). 
+自己定义一些宏会减少你的工作量, e.g., $\bbA$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Math symbols}
+\label{math_msymb}
+
+数学符号太多了。下面这些是其中之一, e.g., 
+\begin{equation}
+	\sum , \int , \iiint , \nabla , \cdot , \times , \otimes , \rightarrow , \Rightarrow , \bigcup , \in , \subset .
+\end{equation}
+
+记得我前面介绍的网址，用不着背这些。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

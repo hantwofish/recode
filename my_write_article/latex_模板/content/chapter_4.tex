@@ -1,0 +1,47 @@
+
+\chapter{Hyperlinks and references}
+\label{href}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The package hyperref}
+
+%The package \imp{hyperref} is the package for referring to labeled elements of a document and hyperlinks. Now, chapters, sections, equations, figures, tables and other elements can be labeled and referred to, e.g., \autoref{math_fe}, \autoref{math_msymb} and \autoref{href}. These are clickable links which in the pdf redirects the reader to the referred element (with ALT+LEFT you can then go back to where you were reading). Here, different alternatives can be used, e.g., \ref{href}, \autoref{href} or \hyperref[href]{Chapter \ref*{href}}. Depending on which language you have to write something, you may need language options (e.g., ngerman for German hyperlinks).
+
+\imp{hyperref} 是用于引用标记过的元素和超链接的包。
+现在，章节、章节、方程、图, 现在，章节，部分，方程，图表格和其他元素可以被标记和引用，
+例如 \autoref{math_fe}、\autoref{math_msymb} 和 \autoref{href}。
+表格和其他元素可以被标记和引用，例如\autoref{math_fe}、\autoref{math_msymb}和\autoref{href}。
+这些是可点击的, pdf的读者可以链接到这些元素。(用Alt+LEFT 你可以重新回到你刚才阅读的地方， 这要取决与你用的pdf阅读软件的快捷键。)。
+这里使用了不同的链接方式，来达到不同的显示效果， 但是作用是一样的，都是链接。
+比如：\ref{href}, \autoref{href} or \hyperref[href]{第\ref*{href}章}。由于你使用的语言，你可能需要设置语言选项。
+
+现在我要显示公式的编号，但是不做链接。\autoref*{math_fe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{超链接、邮件和电脑软件}
+
+超链接可以以这两种方式添加，比如：\url{http://miktex.org/} or \href{http://miktex.org/}{点击这里}。
+发送邮件可以这样添加：\href{mailto:name.lastname@address.org}{name.lastname@address.org}。
+还可以通过以下方式运行一些视频或软件，\href{run:attachments/video.mp4}{video}, 
+\href{run:attachments/3Dpractice.ggb}{geogebra}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{参考文献}
+
+Bibtex 文档可以使用手工创建，或者使用bib管理软件，e.g,  
+\href{http://www.mendeley.com/}{Mendeley} or \href{http://citavi.com/en/index.html}{Citavi}. 
+The bibtex 文档要用 \imp{bibliography} 指明文件位置, 用 \imp{bibliographystyle} 设置样式，
+和一个包来让你使用这些功能。使用 \imp{cite/p} 文档内的元素就可以被引用, e.g., \cite{Hill1952} and \citep{Kroner1977}. 
+在编译的时候，一定要使用bibtex (see compiling options). 要是bibligoraphy的样式没有改变，
+你可能需要删除\textbf{除了main.tex以外}的电脑生成的其他文件， 然后重新编译。记住，是除了\textbf{main.tex以外}, 电脑编译
+过程中自动生成的那些文件。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

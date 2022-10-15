@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% document class
+\documentclass[a4paper]{book}
+%% packages
+\input{settings/packages}
+%% page settings
+\input{settings/page}
+
+%% own commands
+%\newcommand{\tbi}[1]{\textbf{\textit{#1}}}
+\input{settings/macros}
+
+
+%\setcounter{secnumdepth}{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{empty}
+\title{如何使用 \LaTeX 来写一本书和论文}
+\author{Mauricio Lobos}
+\date{}
+\maketitle
+% downloaded template
+\input{content/title_page_1}
+%\pagestyle{plain}
+\listoftodos
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/chapter_1}
+
+\input{content/chapter_2}
+
+\input{content/chapter_3}
+
+\input{content/chapter_4}
+
+\input{content/chapter_5}
+
+\input{content/chapter_6}
+
+
+\input{content/appendix.tex}
+\input{content/reference.tex}
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

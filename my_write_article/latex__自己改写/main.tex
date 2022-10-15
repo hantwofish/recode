@@ -1,0 +1,42 @@
+\documentclass[a4paper]{book}
+
+\input{settings/packages}
+\input{settings/page}
+\input{settings/macros}
+\input{settings/code.tex}
+\makeindex % 设置模式为制作索引
+
+\begin{document}
+    \pagestyle{empty}
+    \title{This Is First Book}
+    \author{hkk}
+    \date{2021年12月21日}
+    \maketitle
+
+    \input{content/first_page}
+    \listoftodos % 生成 todos 列表
+    \tableofcontents % 生成目录
+
+%%%% 
+    \input{content/chapter_1}
+    \input{content/chapter_2}
+    \input{content/chapter_3}
+    \input{content/chapter_4}
+
+    % 附录
+    \input{content/appendix}
+    % 参考文献
+    \input{content/reference}
+%%%
+    
+% 插图列表
+\listoffigures
+% 表格列表
+\listoftables
+% 打印输出索引
+\printindex
+
+
+
+
+\end{document}

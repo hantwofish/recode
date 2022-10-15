@@ -1,0 +1,68 @@
+
+
+\chapter{代码块}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{代码块}
+
+
+
+插入代码时，用到包\imp{listings},并在 settings 中code.txe 中设置代码块格式
+
+代码如下：
+\begin{lstlisting}[language={Tex}]
+	
+	% 代码段
+	\begin{figure}
+		\centering
+		\def\svgscale{0.5}
+		%\input{figure_one.pdf_tex} 
+		% 当与main.tex 位于同一层文件夹中
+		\import{figures}{figuretwo.pdf_tex}
+		 % 当与main.tex 不位于同一层文件夹中
+		\caption{插入SVG 图片}
+	\end{figure}
+
+\end{lstlisting}
+
+c++代码如下：
+\begin{lstlisting}[language={[ANSI]C}]
+	#include<stdio.h>
+	int main()
+	{
+		const int a =10;
+		return 0;
+	}
+
+\end{lstlisting}
+
+
+
+代码文件存在 code 文件夹中。在code文件夹下code.tex 中设置自定义代码格式\\
+代码如下：\\
+\begin{lstlisting}[language={Tex}]
+	
+\lstdefinestyle{CPP_STYLE}{% CPP_STYLE 是格式的名字 ,定义代码格式
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=none,
+    xleftmargin=\parindent,
+    language=C,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color[RGB]{40,40,255},
+    commentstyle=\it\color[RGB]{0,96,96}, 
+    identifierstyle=\color{blue},
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0}, 
+    tabsize=2,
+}
+
+\end{lstlisting}
+
+使用时如下：\\
+\begin{lstlisting}[language={Tex}]
+    %\lstinputlisting[style=CPP_STYLE]{code/one.cpp}
+    %代码的文件名，源代码要utf-8，不然有中文的注释那些是乱码
+\end{lstlisting}
+文件代码：
+
+\lstinputlisting[style=CPP_STYLE]{code/one.cpp}%代码的文件名，源代码要utf-8，不然有中文的注释那些是乱码

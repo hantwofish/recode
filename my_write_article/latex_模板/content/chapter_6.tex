@@ -1,0 +1,47 @@
+\chapter{附录, 注脚, todos 和 索引}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{附录}
+
+有多种原因导致有些内容非常重要，但是太长了，一起写到文章主体里面，影响连贯和可读性。
+如果有这样的内容，那么这些内容可以放在附录展示。使用\imp{appendix}环境。
+就像这里\autoref{app_ex1} and \autoref{app_ex2} 一样。
+
+%For many reasons some concept may be important for the document but too long for the main text. In this kind of cases these concept can be presented with the environment \imp{appendix} in appendices, e.g., as in \autoref{app_ex1} and \autoref{app_ex2}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{注脚}
+
+你也可能想要给文中的内容加入一些额外的信息，那就使用注脚。我是注脚\footnote{Blas bla} 武松\footnote{水浒人物}。
+
+%You may want to give additional information to some points\footnote{Bla bla} in the text\footnote{Blu blup}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Todos}
+
+使用包\imp{todonotes} 来批注将来需要做的事项，比如要改动的，要接着写的等等。
+\todo{这里需要修改}\ 西门庆是个好人，他结束了一场不该有的婚姻。
+这些批注非常有用，特别是你在不确定或者写草稿的时候。这些todo
+可以以目录\imp{listoftodos}的形式显示在任何你想要他们显示的地方，便于你自己查询有那些todo。
+
+%With the package \imp{todonotes} comments\todo{like this one}\ pointing to their place can be embedded into the text. These comments are veeeery useful if you are writing something for the first time or are working on a draft. The todos can be listed with \imp{listoftodos} where you want it to appear in order to see what is unfinished or needs some more work.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{索引}
+
+如果内容很长，有个索引帮助读者查询关键字和特定的概念就很暖心就对了。
+这时候，你需要用\imp{makeidx}这个包，导言区使用命令\imp{makeindex}，在你想显示的位置使用\imp{printindex}
+还有编译的时候要使用\imp{makeindex}。在要索引的文字上使用\imp{index}，后现代主义\index{后现代主义}
+薛鄂猫定理\index{薛鄂猫定理}， 以及所有中二外二，由于学术不怎么样，需要你背一堆专业词汇来装学了什么的词汇。
+当然不可或缺的大厂装十三黑话，“到处投广告”，你要说抓住流量风口\index{流量风口}，布局线上新零售。
+还有什么风清杨\index{风清杨}，就是自己吃饱了撑住了，还要强迫别人跟着二。
+
+
