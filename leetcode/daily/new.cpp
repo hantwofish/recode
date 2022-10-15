@@ -20,7 +20,7 @@ void test()
 {
     vector<vector<string>> sets={{ "1","2","3"},{"4","5"},{"6","7"}};
     string add ,re;
-   re=  decare(sets,add);
+    re = decare(sets,add);
  //   cout << re <<endl;
 
 }
