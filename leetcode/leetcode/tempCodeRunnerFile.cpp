@@ -1,1 +1,1 @@
-resultArray
+lengthStr
