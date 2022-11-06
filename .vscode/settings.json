@@ -2,7 +2,9 @@
     "cmake.configureOnOpen": true,
     "files.associations": {
         "ostream": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "iostream": "cpp",
+        "initializer_list": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/leetcode"
 }
