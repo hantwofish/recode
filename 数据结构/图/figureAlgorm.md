@@ -11,3 +11,5 @@
 参加leetcode 802： https://leetcode-cn.com/problems/find-eventual-safe-states/
 
 ```
+### 网络连通性
+并查集
