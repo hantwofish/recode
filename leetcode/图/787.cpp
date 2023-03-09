@@ -10,9 +10,10 @@ public:
         figureData.resize(n, vector<int>(n,0));
         for(int i =0; i < flights.size(); i++){
             vector<int>temp = flights[i];
-            cout<< temp[0] << " " << temp[1] << " " << temp[2] << endl;
+            //cout<< temp[0] << " " << temp[1] << " " << temp[2] << endl;
             figureData[temp[0]][temp[1]] = temp[2]; 
         }
+        isVisited.resize(n,false);
 
         //PrintVec(figureData);
 
@@ -51,11 +52,19 @@ public:
     {
         //cout << "DfsSearch " << " cur= " << cur << endl;
         int nodeNumber = figureData.size();
+        if(pathNode > k+ 2){
+            return;
+        }
+
         if(cur == dest){
-            cout << "cur == dst "  << endl;
-            tempPath.push_back(dest);
-            resuPath.push_back(tempPath);
-            tempPath.pop_back();
+            
+            totalCost = min(totalCost, tempCost);
+            //tempPath.push_back(dest);
+            //resuPath.push_back(tempPath);
+            //tempPath.pop_back();
+            cout << "pathNode= " << pathNode << endl;
+
+            cout << "cur == dst  tempCost = "<< tempCost <<" totalCost= "  << totalCost <<  endl;
             return;
         }
         for(int i = 0; i< nodeNumber; i++){
@@ -64,9 +73,21 @@ public:
                 //cout << "figureData[" << cur<<"]"<<"[" << i << "]" << " = " << figureData[cur][i] << endl;
                 continue;
             }
-            tempPath.push_back(cur);
+            if(isVisited[cur] == true){
+                continue;
+            }
+            if(pathNode > k+ 2){
+                continue;
+            }
+            isVisited[cur] = true;
+            tempCost += figureData[cur][i];
+            pathNode++;
+            // tempPath.push_back(cur);
             DfsSearch(n,figureData,i,dest, k, tempPath);
-            tempPath.pop_back();
+            tempCost -= figureData[cur][i];
+            // tempPath.pop_back();
+            isVisited[cur] = false;
+            pathNode--;
         }
 
     }
@@ -85,15 +106,18 @@ public:
     vector<vector<int>>figureData;
     int totalCost = INT32_MAX;
     vector<vector<int>>resuPath;
+    int tempCost = 0;
     vector<int>tempPath;
+    vector<bool>isVisited;
+    int pathNode = 1;
 };
 
 int main()
 {
-    vector<vector<int>> flights = {{0,1,100},{1,2,100},{0,2,500}};
+    vector<vector<int>> flights = {{0,1,100},{1,2,100},{2,0,100},{1,3,600},{2,3,200}};
     cout << "start" << endl;
     Solution s1;
-    int resu = s1.findCheapestPrice(3, flights, 0, 2, 1);
+    int resu = s1.findCheapestPrice(4, flights, 0, 3, 1);
     cout << "resu=  " << resu <<  endl;
     return 0;
 }
